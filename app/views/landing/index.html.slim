@@ -1,0 +1,26 @@
+.container style="margin-top: 10%"
+
+
+  = bootstrap_form_for :translit, path: root_path do |f|
+    .row
+      .col-md-2
+        = f.select :mode, [['ГОСТ - 2000', :gost_2000], ['ISO 9', :iso_9]]
+        / select.form-control.input-xs
+        /   option ГОСТ - 2000
+        /   option ISO 9
+        br
+
+    .row
+      .col-md-6
+        = f.text_area :phrase, rows: 10, hide_label: true, placeholder: 'type phrase for transliteration...', class: 'input-lg'
+      .col-md-6
+        .form-group.shadow-textarea
+          textarea class="form-control input-lg" rows="10"
+            = @translitted_phrase
+
+    .row
+      .col-md-12
+        = f.submit 'Translit', class: 'btn btn-lg btn-success input-lg center-block'
+  br
+
+  .row

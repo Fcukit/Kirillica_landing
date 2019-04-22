@@ -1,0 +1,12 @@
+// Place all the styles related to the Landing controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: url("/assets/blue-sky.png") no-repeat top center;
+  background-attachment: fixed, fixed;
+  -moz-background-size: 100%;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: cover;
+}
