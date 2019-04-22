@@ -4,15 +4,12 @@
   = bootstrap_form_for :translit, path: root_path do |f|
     .row
       .col-md-2
-        = f.select :mode, [['ГОСТ - 2000', :gost_2000], ['ISO 9', :iso_9]]
-        / select.form-control.input-xs
-        /   option ГОСТ - 2000
-        /   option ISO 9
+        = f.select :mode, [['GOST - 2000', :gost_2000], ['ISO 9', :iso_9], ['USA Government', :usa_government]], selected: @mode || :iso_9, hide_label: true
         br
 
     .row
       .col-md-6
-        = f.text_area :phrase, rows: 10, hide_label: true, placeholder: 'type phrase for transliteration...', class: 'input-lg'
+        = f.text_area :phrase, rows: 10, hide_label: true, placeholder: 'type cyrillic phrase for transliteration...', value: @phrase, class: 'input-lg'
       .col-md-6
         .form-group.shadow-textarea
           textarea class="form-control input-lg" rows="10"
