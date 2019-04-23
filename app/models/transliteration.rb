@@ -1,0 +1,3 @@
+class Transliteration < ApplicationRecord
+
+end

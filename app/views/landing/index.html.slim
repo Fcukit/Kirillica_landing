@@ -12,12 +12,12 @@
         = f.text_area :phrase, rows: 10, hide_label: true, placeholder: 'type cyrillic phrase for transliteration...', value: @phrase, class: 'input-lg'
       .col-md-6
         .form-group.shadow-textarea
-          textarea class="form-control input-lg" rows="10"
+          textarea class="form-control input-lg" rows="10" placeholder="and you will see transliterated phrase..."
             = @translitted_phrase
 
     .row
       .col-md-12
-        = f.submit 'Translit', class: 'btn btn-lg btn-success input-lg center-block'
+        = f.submit 'Translit', class: 'btn btn-lg btn-success input-lg center-block', style: 'width: 20%'
   br
 
   .row

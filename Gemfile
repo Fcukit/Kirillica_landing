@@ -49,6 +49,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "capistrano"
   gem "capistrano-rails", "~> 1.4", require: false
+  gem 'annotate'
 end
 
 group :development do
@@ -72,3 +73,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'kirillica'
+gem 'pundit'
