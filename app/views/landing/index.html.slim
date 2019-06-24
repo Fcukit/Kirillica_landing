@@ -1,23 +1,38 @@
-.container style="margin-top: 10%"
+.container
+  .row
+    .col-md-12
+      .panel-heading
+        h1 Kirillica.info - сервис для онлайн-транслитерации символов кириллицы в латинские символы (UTF-8).
+      .panel-body
+        h4 Транслитерация ГОСТ 7.79-2000
+        p Настоящий стандарт распространяется на правила транслитерации средствами латинского алфавита отдельных букв, слов, выражений, а также связанных текстов на языках, письменность которых базируется на кирилловском алфавите.
 
+        h4 Транслитерация ISO 9 - 1995
+        p Система транслитерации ISO 9 - 1995 (Transliteration of Slavic Cyrillic characters into Latin characters) является одной из наиболее широко распространенных.
+
+        h4 Транслитерация Госдепартамента США
+        p Система транслитерации из кириллического алфавита в латинский алфавит, используемая Госдепартаментом США.
+
+        h4 Транслитерация имен для загранпаспорта РФ
+        p Используется для заполнения бланков паспортов с символикой Российской Федерации.
 
   = bootstrap_form_for :translit, path: root_path do |f|
     .row
       .col-md-2
-        = f.select :mode, [['GOST - 2000', :gost_2000], ['ISO 9', :iso_9], ['USA Government', :usa_government], ['Загран паспорт', :passport]], selected: @mode || :iso_9, hide_label: true
+        = f.select :mode, [['ГОСТ 7.79-2000', :gost_2000], ['ISO 9 - 1995', :iso_9], ['Транслитерация Госдепартамента США', :usa_government], ['Транслитерация имен для загранпаспорта РФ', :passport]], selected: @mode || :iso_9, hide_label: true
         br
 
     .row
       .col-md-6
-        = f.text_area :phrase, rows: 10, hide_label: true, placeholder: 'type cyrillic phrase for transliteration...', value: @phrase, class: 'input-lg'
+        = f.text_area :phrase, rows: 10, hide_label: true, placeholder: 'введите фразу для транслитерации...', value: @phrase, class: 'input-lg'
       .col-md-6
         .form-group.shadow-textarea
-          textarea class="form-control input-lg" rows="10" placeholder="and you will see transliterated phrase..."
+          textarea class="form-control input-lg" rows="10" placeholder="и здесь будет результат..."
             = @translitted_phrase
 
     .row
       .col-md-12
-        = f.submit 'Translit', class: 'btn btn-lg btn-success input-lg center-block', style: 'width: 20%'
+        = f.submit 'Транслит!', class: 'btn btn-lg btn-success input-lg center-block', style: 'width: 20%'
   br
 
   .row
