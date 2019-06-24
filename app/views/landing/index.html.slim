@@ -4,7 +4,7 @@
   = bootstrap_form_for :translit, path: root_path do |f|
     .row
       .col-md-2
-        = f.select :mode, [['GOST - 2000', :gost_2000], ['ISO 9', :iso_9], ['USA Government', :usa_government]], selected: @mode || :iso_9, hide_label: true
+        = f.select :mode, [['GOST - 2000', :gost_2000], ['ISO 9', :iso_9], ['USA Government', :usa_government], ['Загран паспорт', :passport]], selected: @mode || :iso_9, hide_label: true
         br
 
     .row
